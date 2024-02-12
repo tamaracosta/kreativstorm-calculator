@@ -42,7 +42,7 @@ operator.forEach(operation =>{
 function clearCurrentNum(name = ""){
     prevNum += currentNum + " " + name + " ";
     prevNumEl.innerText = prevNum;
-    currentNumEl.innerText = "";
+    currentNumEl.innerText = result;
     currentNum = "";
 }
 
