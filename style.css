@@ -1,121 +1,124 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Arial', sans-serif;
-}
-
-body {
-	
-	background-color: #1c1b1b;
-	display: flex;
-	justify-content: space-evenly;
-  flex-direction: column;
-	align-items: center;
-	height: 100vh;	
-	color: #333;
-}
-
-h1 {
-  font-size: 2rem;
-  font-weight: bold;
-  color: #2bf233;
-}
-
-main {
-  width: 300px;
-  background-color: #141414;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-}
-
-ul {
-  display: flex;
-}
-
-li {
-  list-style: none;
-  padding: 15px;
-}
-
-p, a {
-  color: white;
-}
-
-.display {
+	margin: 0;
+	padding: 0;
 	box-sizing: border-box;
-	width: 100%;
-    height: 70px;
-	font-size: 1.6em;
-	text-align: right;
-	border: 1px solid #ccc;
-	border-radius: 5px;
-	font-family: calculator;
+	font-family: 'Arial', sans-serif;
+  }
+  
+  body {
+	  
+	  background-color: #1c1b1b;
+	  display: flex;
+	  justify-content: space-evenly;
+	flex-direction: column;
+	  align-items: center;
+	  height: 100vh;	
+	  color: #333;
+  }
+  
+  h1 {
+	font-size: 2rem;
 	font-weight: bold;
-    padding: 5px;
-}
-.prevNum {
-    width: 100%;
-    height: auto;
-    color: #888;
-}
-
-input[type='button'] {
-	width: 100%;
-	padding: 10px;
-	font-size: 1.2em;
-	border: none;
-	border-radius: 5px;
-	cursor: pointer;
-	transition: background-color 0.3s ease;
-}
-
-.number,
-.decimal {
-	background-color: #e6e6e6;
-	color: #333;
-}
-
-.sum,
-.subtract,
-.multiply,
-.divde,
-.modules,
-.equal {
-	background-color: #2bf233;
-	color: #000;
-}
-
-.undoButton {
-	background-image: url('./src/images/undo.svg');
-	background-size: auto;
-	color: #cccccc;
-	background-repeat: no-repeat;
-	background-position: center;
-}
-.clear-input {
-	background-color: #2bf233;
-	color: #000;
-}
-
-input[type='button']:hover {
-	opacity: 0.9;
-}
-
-table {
-	width: 100%;
-	border-collapse: collapse;
-}
-
-td {
-	width: 25%;
-	padding: 5px;
-}
-
-th {
-	padding-bottom: 20px;
-}
-th.display-th {
-    padding: 10px;
-}
+	color: #2bf233;
+  }
+  
+  main {
+	width: 300px;
+	background-color: #141414;
+	border-radius: 10px;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	padding: 20px;
+  }
+  
+  ul {
+	display: flex;
+  }
+  
+  li {
+	list-style: none;
+	padding: 15px;
+  }
+  
+  p, a {
+	color: white;
+  }
+  
+  .display {
+	  box-sizing: border-box;
+	  width: 100%;
+	  height: 70px;
+	  font-size: 1.6em;
+	  text-align: right;
+	  border: 1px solid #ccc;
+	  border-radius: 5px;
+	  font-family: calculator;
+	  font-weight: bold;
+	  padding: 5px;
+	  overflow:auto;
+  }
+  .results {
+	  width: 100%;
+	  height: auto;
+	  color: #888;
+	  overflow:hidden;
+  }
+  
+  input[type='button'] {
+	  width: 100%;
+	  padding: 10px;
+	  font-size: 1.2em;
+	  border: none;
+	  border-radius: 5px;
+	  cursor: pointer;
+	  transition: background-color 0.3s ease;
+  }
+  
+  .number,
+  .decimal {
+	  background-color: #e6e6e6;
+	  color: #333;
+  }
+  
+  .sum,
+  .subtract,
+  .multiply,
+  .divide,
+  .modules,
+  .equal {
+	  background-color: #2bf233;
+	  color: #000;
+  }
+  
+  .undoButton {
+	  background-image: url('./src/images/undo.svg');
+	  background-size: auto;
+	  color: #cccccc;
+	  background-repeat: no-repeat;
+	  background-position: center;
+  }
+  .clear-input {
+	  background-color: #2bf233;
+	  color: #000;
+  }
+  
+  input[type='button']:hover {
+	  opacity: 0.9;
+  }
+  
+  table {
+	  width: 100%;
+	  border-collapse: collapse;
+  }
+  
+  td {
+	  width: 25%;
+	  padding: 5px;
+  }
+  
+  th {
+	  padding-bottom: 20px;
+  }
+  th.display-th {
+	  padding: 10px;
+  }
+  
