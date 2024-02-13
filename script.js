@@ -45,28 +45,46 @@ function clearCurrentNum(name = ""){
     currentNumEl.innerText = result;
     currentNum = "";
 }
+function add(a, b) {
+    return a + b;
+}
 
-function mathOperation(){
-    if(lastOperation === "*"){
-        result = parseFloat(result) * parseFloat(currentNum);
-    }else if(lastOperation === "+"){
-        result = parseFloat(result) + parseFloat(currentNum);
-    }else if(lastOperation === "-"){
-        result = parseFloat(result) - parseFloat(currentNum);
-    }else if(lastOperation === "/"){
-        if(parseFloat(currentNum) === 0){
-            alert("You can't divide by zero. Nice try though!")
-            return;
-        }    
-        result = parseFloat(result) / parseFloat(currentNum);
+function subtract(a, b) {
+    return a - b;
+}
+
+function multiply(a, b) {
+    return a * b;
+}
+
+function divide(a, b) {
+    if(b === 0) {
+        return 'Error: Division by zero';
     }
-    result = parseFloat(result.toFixed(2));
+    return a / b;
+}
+function operate(operator, num1, num2) {
+    num1 = parseFloat(num1);
+    num2 = parseFloat(num2);
+
+    switch(operator) {
+        case '+':
+            return add(num1, num2);
+        case '-':
+            return subtract(num1, num2);
+        case '*':
+            return multiply(num1, num2);
+        case '/':
+            return divide(num1, num2);
+        default:
+            return 'Invalid Operator';
+    }
 }
 
 equalEl.addEventListener("click", (e) =>{
     if(!currentNum || !prevNum) return;
     haveDot = false;
-    mathOperation();
+    operate();
     clearCurrentNum();
     currentNumEl.innerText = result;
     currentNum = result;
