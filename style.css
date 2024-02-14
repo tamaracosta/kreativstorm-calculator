@@ -10,7 +10,7 @@
 	  background-color: #1c1b1b;
 	  display: flex;
 	  justify-content: space-evenly;
-	flex-direction: column;
+	  flex-direction: column;
 	  align-items: center;
 	  height: 100vh;	
 	  color: #333;
@@ -121,4 +121,31 @@
   th.display-th {
 	  padding: 10px;
   }
+
+  .keyboardSupport{
+	text-align: center;
+	font-family: 'Courier New', Courier, monospace;
+	font-size: 15px;
+	color: #2bf233;
+	margin-top: 10px;
+	margin-bottom: 15px;
+	padding: 0;
+	opacity: 0.45;
+  }
   
+  .keySupp {
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	font-size: 12px;
+	font-family: 'Courier New', Courier, monospace;
+  }
+  .keySupp > li {
+	padding-top: 3px;
+  }
+
+  footer{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+  }
