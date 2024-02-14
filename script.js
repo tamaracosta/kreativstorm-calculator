@@ -117,3 +117,64 @@ function makeSound(){
     let playSound = new Audio("./sound/click.wav");
     playSound.play();
 }
+
+document.addEventListener("keydown", (e) =>{
+    console.log(e.key);
+    if(e.key === "." && !haveDot){
+        haveDot = true;
+        currentNum += e.key;
+    }else if(e.key === "." && haveDot){
+        return;
+    }else if(e.key === "1" ||
+        e.key === "2" || 
+        e.key === "3" || 
+        e.key === "4" ||
+        e.key === "5" || 
+        e.key === "6" || 
+        e.key === "7" || 
+        e.key === "8" || 
+        e.key === "9" || 
+        e.key === "0") {
+        makeSound();
+        currentNum += e.key;
+        currentNumEl.innerText = currentNum;
+    }else if(e.key === "+" ||
+        e.key === "-" ||
+        e.key === "*" ||
+        e.key === "/"){
+        makeSound();
+        if(!currentNum) return;
+        haveDot = false;
+        const operationName = e.key;
+        if(currentNum && prevNum && lastOperation){
+        result = operate(parseFloat(result), parseFloat(currentNum), lastOperation);
+        }else{
+        result = parseFloat(currentNum);
+    }
+        clearCurrentNum(operationName);
+        lastOperation = operationName;
+    }else if(e.key === "=" || 
+        e.key === "Enter"){
+        makeSound();
+        if(!currentNum || !prevNum) return;
+        haveDot = false;
+        result = operate(parseFloat(result), parseFloat(currentNum), lastOperation);
+        clearCurrentNum();
+        currentNumEl.innerText = result;
+        currentNum = result;
+        prevNum = "";
+    }else if(e.key === "Backspace"){
+        makeSound();
+        if(currentNumEl.innerText === "0") return;
+        currentNum = currentNumEl.innerText;
+        currentNum = currentNum.slice(0,-1);
+        currentNumEl.innerText = currentNum;
+    }else if(e.key === "Escape"){
+        makeSound();
+        prevNumEl.innerText = "0";
+        currentNumEl.innerText = "0";
+        currentNum = "";
+        prevNum = "";
+        result = "";
+    }
+})
