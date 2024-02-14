@@ -5,6 +5,7 @@ const numButton = document.querySelectorAll('.number');
 const equalEl = document.querySelector('.equal');
 const operator = document.querySelectorAll('.operator');
 const clearAll = document.querySelector('.clear-input');
+const sound = document.querySelectorAll('.sound');
 
 let currentNum = "";
 let prevNum = "";
@@ -30,7 +31,8 @@ operator.forEach(operation =>{
         haveDot = false;
         const operationName = e.target.value;
         if(currentNum && prevNum && lastOperation){
-            mathOperation();
+            result = operate(parseFloat(result), parseFloat(currentNum), lastOperation);
+            
         }else{
             result = parseFloat(currentNum);
         }
@@ -46,28 +48,26 @@ function clearCurrentNum(name = ""){
     currentNum = "";
 }
 function add(a, b) {
-    return a + b;
+    return parseFloat((a + b).toFixed(2));
 }
 
 function subtract(a, b) {
-    return a - b;
+    return parseFloat((a - b).toFixed(2));
 }
 
 function multiply(a, b) {
-    return a * b;
+    return parseFloat((a * b).toFixed(2));
 }
 
 function divide(a, b) {
     if(b === 0) {
         return 'Error: Division by zero';
     }
-    return a / b;
+    return parseFloat((a / b).toFixed(2));
 }
-function operate(operator, num1, num2) {
-    num1 = parseFloat(num1);
-    num2 = parseFloat(num2);
 
-    switch(operator) {
+function operate(num1, num2, operation) {
+    switch(operation) {
         case '+':
             return add(num1, num2);
         case '-':
@@ -84,7 +84,7 @@ function operate(operator, num1, num2) {
 equalEl.addEventListener("click", (e) =>{
     if(!currentNum || !prevNum) return;
     haveDot = false;
-    operate();
+    result = operate(parseFloat(result), parseFloat(currentNum), lastOperation);
     clearCurrentNum();
     currentNumEl.innerText = result;
     currentNum = result;
@@ -106,3 +106,14 @@ undoBtn.addEventListener("click", () =>{
     currentNumEl.innerText = currentNum;
 
 })
+
+sound.forEach(button =>{
+    button.addEventListener("click", () =>{
+        makeSound();
+    } )
+})
+
+function makeSound(){
+    let playSound = new Audio("./sound/click.wav");
+    playSound.play();
+}
