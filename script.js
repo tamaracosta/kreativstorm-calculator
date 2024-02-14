@@ -32,7 +32,6 @@ operator.forEach(operation =>{
         const operationName = e.target.value;
         if(currentNum && prevNum && lastOperation){
             result = operate(parseFloat(result), parseFloat(currentNum), lastOperation);
-            
         }else{
             result = parseFloat(currentNum);
         }
@@ -60,8 +59,9 @@ function multiply(a, b) {
 }
 
 function divide(a, b) {
-    if(b === 0) {
-        return 'Error: Division by zero';
+    if (b === 0) {
+        alert('Error: Division by zero')
+        return a;
     }
     return parseFloat((a / b).toFixed(2));
 }
@@ -81,7 +81,7 @@ function operate(num1, num2, operation) {
     }
 }
 
-equalEl.addEventListener("click", (e) =>{
+equalEl.addEventListener("click", () =>{
     if(!currentNum || !prevNum) return;
     haveDot = false;
     result = operate(parseFloat(result), parseFloat(currentNum), lastOperation);
@@ -91,7 +91,7 @@ equalEl.addEventListener("click", (e) =>{
     prevNum = "";
 })
 
-clearAll.addEventListener("click", (e) =>{
+clearAll.addEventListener("click", () =>{
     prevNumEl.innerText = "0";
     currentNumEl.innerText = "0";
     currentNum = "";
