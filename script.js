@@ -123,6 +123,7 @@ document.addEventListener("keydown", (e) =>{
     if(e.key === "." && !haveDot){
         haveDot = true;
         currentNum += e.key;
+        currentNumEl.innerText = currentNum;
     }else if(e.key === "." && haveDot){
         return;
     }else if(e.key === "1" ||
