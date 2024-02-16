@@ -5,16 +5,17 @@
 	font-family: 'Arial', sans-serif;
   }
   
-  body {
-	  
+  body {	  
 	  background-color: #1c1b1b;
 	  display: flex;
 	  justify-content: space-evenly;
 	  flex-direction: column;
-	  align-items: center;
-	  height: 100vh;	
-	  color: #333;
+	  align-items: center;	  	  
   }
+
+	header {
+		margin: 5px 0;
+	}
   
   h1 {
 	font-size: 2rem;
@@ -23,7 +24,7 @@
   }
   
   main {
-	width: 300px;
+	width: 400px;
 	background-color: #141414;
 	border-radius: 10px;
 	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -56,10 +57,15 @@
 	  padding: 5px;
 	  overflow:auto;
   }
+
+	#prevNum {
+		color: #888;
+	}
+
   .results {
 	  width: 100%;
 	  height: auto;
-	  color: #888;
+	  color: #d5d3d3;
 	  overflow:hidden;
   }
   
@@ -126,11 +132,11 @@
 	text-align: center;
 	font-family: 'Courier New', Courier, monospace;
 	font-size: 15px;
-	color: #2bf233;
+	color: #bcbcbc;
 	margin-top: 10px;
 	margin-bottom: 15px;
-	padding: 0;
-	opacity: 0.45;
+	padding: 0;	
+	font-weight: bold;
   }
   
   .keySupp {
@@ -142,10 +148,20 @@
   }
   .keySupp > li {
 	padding-top: 3px;
+	color:#6c986e;
+	font-size: 14px;
   }
 
   footer{
-	display: flex;
-	flex-direction: column;
+	display: flex;	
 	align-items: center;
+	margin-top: 5px;
   }
+
+	.link-github {
+		color: #bcbcbc;
+	}
+
+	.link-github a{
+		color: #6e6e6e;
+	}	
