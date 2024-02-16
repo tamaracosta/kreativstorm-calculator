@@ -20,8 +20,7 @@ Our goal was to create a calculator with some features
 - i. Add keyboard support!
 
 ## 💻How it works?
-
-
+https://github.com/tamaracosta/kreativstorm-calculator/assets/75817559/454aa7ac-a926-4c28-ba4d-bf4e7672c8a7
 
 ## 👩‍💻 Squad
 | Dev    | Github |
